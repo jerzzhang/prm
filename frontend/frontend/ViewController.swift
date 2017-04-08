@@ -10,13 +10,21 @@ import UIKit
 import Alamofire //HTTP framework
 import AlamofireObjectMapper
 
-class ViewController: UIViewController, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var contacts: [AnyObject] = [];
+    @IBOutlet weak var table: UITableView!
+    var contacts: [Contact] = [];
     
-    //public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return contacts.count;
+    }
     
-    //public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell");
+        cell.textLabel?.text = contacts[indexPath.row].firstName! + " " + contacts[indexPath.row].lastName!;
+        
+        return cell;
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +39,11 @@ class ViewController: UIViewController, UITableViewDelegate {
     }
     
     func getContacts() {
-        Alamofire.request("https://prm-backend.appspot.com/users/1/contacts", method: .get).responseJSON {
-            response in
+        Alamofire.request("https://prm-backend.appspot.com/users/1/contacts", method: .get).responseArray {
+            (response: DataResponse<[Contact]>) in
             
-            print(response.result.value);
-            
+            self.contacts = response.result.value!;
+            self.table.reloadData();
         }
     }
 
