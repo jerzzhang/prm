@@ -27,9 +27,9 @@ class AddContactsViewController: UIViewController {
     }
     
     @IBAction func donePressed(_ sender: Any) {
-        print("https://prm-backend.appspot.com/users/1/contacts?firstName=" + firstName + "&lastName=" + lastName + "&phoneNumber=" + phoneNumber + "&email=" + email + "&location=" + location + "&company=" + company + "&position=" + position);
+        print("https://prm-backend.appspot.com/users/1/contacts?firstName=\(firstName.text != nil ? firstName.text! : "")&lastName=\(lastName.text != nil ? lastName.text! : "")&phoneNumber=\(phoneNumber.text != nil ? phoneNumber.text! : "")&email=\(email.text != nil ? email.text! : "")&location=\(location.text != nil ? location.text! : "")&company=\(company.text != nil ? company.text! : "")&position=\(position.text != nil ? position.text! : "")");
         
-        Alamofire.request("https://prm-backend.appspot.com/users/1/contacts?firstName=" + firstName + "&lastName=" + lastName + "&phoneNumber=" + phoneNumber + "&email=" + email + "&location=" + location + "&company=" + company + "&position=" + position, method: .post).responseJSON {
+        Alamofire.request("https://prm-backend.appspot.com/users/1/contacts?firstName=\(firstName.text != nil ? firstName.text! : "")&lastName=\(lastName.text != nil ? lastName.text! : "")&phoneNumber=\(phoneNumber.text != nil ? phoneNumber.text! : "")&email=\(email.text != nil ? email.text! : "")&location=\(location.text != nil ? location.text! : "")&company=\(company.text != nil ? company.text! : "")&position=\(position.text != nil ? position.text! : "")", method: .post).responseJSON {
             response in
             
             print(response.result.value!);

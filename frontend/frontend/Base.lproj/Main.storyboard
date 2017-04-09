@@ -45,7 +45,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sbU-2Q-GTO" id="FFf-OB-DAE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -78,7 +78,7 @@
         <!--Add Contacts View Controller-->
         <scene sceneID="5cJ-zn-TGo">
             <objects>
-                <viewController id="IxZ-k7-9BM" customClass="AddContactsViewController" sceneMemberID="viewController">
+                <viewController id="IxZ-k7-9BM" customClass="AddContactsViewController" customModule="frontend" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hYt-X3-pfC"/>
                         <viewControllerLayoutGuide type="bottom" id="LGu-Ic-2rl"/>
