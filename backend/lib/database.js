@@ -26,6 +26,12 @@ function getContacts(id, cb) {
 	});
 }
 
+function postContact(id, firstName, lastName, phoneNumber, email, location, company, position, cb) {
+	connection.query('INSERT INTO contacts (user_id, first_name, last_name, phone_number, email, location, company, position) VALUES (' + id + ', ' + firstName + ', ' + lastName + ', ' + phoneNumber + ', ' + email + ', ' + location + ', ' + company + ', ' + position + ')', function(err, results, fields) {
+		cb(err, results);
+	});
+}
+
 function connectionErrorHandler(err) {
 	if(err) {
 	    console.log(err);    
@@ -34,5 +40,6 @@ function connectionErrorHandler(err) {
 
 module.exports = {
 	getUser: getUser,
-	getContacts: getContacts
+	getContacts: getContacts,
+	postContact: postContact
 }

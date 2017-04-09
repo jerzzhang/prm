@@ -75,10 +75,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Contacts View Controller-->
         <scene sceneID="5cJ-zn-TGo">
             <objects>
-                <viewController id="IxZ-k7-9BM" sceneMemberID="viewController">
+                <viewController id="IxZ-k7-9BM" customClass="AddContactsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hYt-X3-pfC"/>
                         <viewControllerLayoutGuide type="bottom" id="LGu-Ic-2rl"/>
@@ -99,7 +99,11 @@
                                                 <segue destination="BYZ-38-t0r" kind="show" id="Jtr-94-KXm"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="9xm-m5-2aF"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="9xm-m5-2aF">
+                                            <connections>
+                                                <action selector="donePressed:" destination="IxZ-k7-9BM" id="GnF-bF-fW9"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -195,6 +199,15 @@
                             <constraint firstItem="dDh-ks-xiP" firstAttribute="leading" secondItem="O9s-7h-KwR" secondAttribute="leadingMargin" constant="20" id="tRv-s1-zKY"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="company" destination="HQM-lB-LLY" id="GIf-Ud-feF"/>
+                        <outlet property="email" destination="G21-DC-qha" id="szB-w9-cyG"/>
+                        <outlet property="firstName" destination="dDh-ks-xiP" id="5U4-0u-5vN"/>
+                        <outlet property="lastName" destination="8O1-Ot-B1d" id="yd3-ZS-Bju"/>
+                        <outlet property="location" destination="2YI-Cc-BPA" id="DAO-lR-dd7"/>
+                        <outlet property="phoneNumber" destination="1wt-k2-epf" id="0Gv-2n-NEz"/>
+                        <outlet property="position" destination="q5W-Yo-eBq" id="xti-rR-jSY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HJ7-Gd-SqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

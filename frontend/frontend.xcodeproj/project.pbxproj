@@ -14,6 +14,7 @@
 		F8F857081E97E23E00A315A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8F857071E97E23E00A315A7 /* Assets.xcassets */; };
 		F8F8570B1E97E23E00A315A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8F857091E97E23E00A315A7 /* LaunchScreen.storyboard */; };
 		F8F857131E97FAC600A315A7 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F857121E97FAC600A315A7 /* Contact.swift */; };
+		F8F857151E9990A700A315A7 /* AddContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F857141E9990A700A315A7 /* AddContactsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F8F8570A1E97E23E00A315A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8F8570C1E97E23E00A315A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8F857121E97FAC600A315A7 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		F8F857141E9990A700A315A7 /* AddContactsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddContactsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				F8F857091E97E23E00A315A7 /* LaunchScreen.storyboard */,
 				F8F8570C1E97E23E00A315A7 /* Info.plist */,
 				F8F857121E97FAC600A315A7 /* Contact.swift */,
+				F8F857141E9990A700A315A7 /* AddContactsViewController.swift */,
 			);
 			path = frontend;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8F857031E97E23E00A315A7 /* ViewController.swift in Sources */,
+				F8F857151E9990A700A315A7 /* AddContactsViewController.swift in Sources */,
 				F8F857131E97FAC600A315A7 /* Contact.swift in Sources */,
 				F8F857011E97E23E00A315A7 /* AppDelegate.swift in Sources */,
 			);
