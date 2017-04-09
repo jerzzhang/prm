@@ -25,7 +25,7 @@ router.get('/:user_id/contacts/:contact_id/entries/:entry_id', function(req, res
 
 router.post('/:user_id/contacts', function(req, res) {
 	dbModel.postContact(req.params.user_id, req.query.firstName, req.query.lastName, req.query.phoneNumber, req.query.email, req.query.location, req.query.company, req.query.position, function(err, result) {
-		res.send(err);
+		res.send(JSON.stringify(err));
 		res.end(JSON.stringify(result));
 	});
 }); 
