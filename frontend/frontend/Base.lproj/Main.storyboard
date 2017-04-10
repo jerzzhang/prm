@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="main" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -48,6 +48,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="fIu-We-j9c" kind="show" identifier="toDetailSegue" id="aDc-lh-iYb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -73,7 +76,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="105" y="139"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="jFV-Iu-LK2">
+            <objects>
+                <viewController storyboardIdentifier="DetailViewController" id="fIu-We-j9c" customClass="DetailViewController" customModule="frontend" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ogZ-DT-VJH"/>
+                        <viewControllerLayoutGuide type="bottom" id="IvX-Fo-uiY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VAh-u4-YEm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N5j-7x-ilV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Ljm-xP-afF"/>
+                                    <constraint firstAttribute="height" constant="44" id="yl8-HO-hh8"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="CmZ-ke-X9o">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" style="plain" id="6TD-Sz-UVd">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="fJ3-GH-0R6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N5j-7x-ilV" firstAttribute="top" secondItem="VAh-u4-YEm" secondAttribute="top" constant="20" id="6XJ-vu-Xm5"/>
+                            <constraint firstAttribute="trailing" secondItem="N5j-7x-ilV" secondAttribute="trailing" id="8s2-d0-FKD"/>
+                            <constraint firstItem="N5j-7x-ilV" firstAttribute="leading" secondItem="VAh-u4-YEm" secondAttribute="leading" id="Xie-hC-nyJ"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="navBar" destination="N5j-7x-ilV" id="2aU-lm-4qO"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DmT-zp-Dm7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="803"/>
         </scene>
         <!--Add Contacts View Controller-->
         <scene sceneID="5cJ-zn-TGo">
@@ -87,26 +134,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X84-Ht-9gT">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="P7A-i1-CwY"/>
-                                </constraints>
-                                <items>
-                                    <navigationItem title="Add Contact" id="tBW-r8-Zqp">
-                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" style="plain" id="8Xv-EH-VxG">
-                                            <connections>
-                                                <segue destination="BYZ-38-t0r" kind="show" id="Jtr-94-KXm"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="9xm-m5-2aF">
-                                            <connections>
-                                                <action selector="donePressed:" destination="IxZ-k7-9BM" id="GnF-bF-fW9"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dDh-ks-xiP">
                                 <rect key="frame" x="87" y="99" width="200" height="30"/>
                                 <constraints>
@@ -170,6 +197,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X84-Ht-9gT">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="P7A-i1-CwY"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Add Contact" id="tBW-r8-Zqp">
+                                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" style="plain" id="8Xv-EH-VxG">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" identifier="toMainFromAddContact" id="Jtr-94-KXm"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Done" style="plain" id="9xm-m5-2aF">
+                                            <connections>
+                                                <action selector="donePressed:" destination="IxZ-k7-9BM" id="GnF-bF-fW9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -179,7 +226,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="q5W-Yo-eBq" secondAttribute="trailing" constant="20" id="7ww-eh-P9S"/>
                             <constraint firstAttribute="trailingMargin" secondItem="HQM-lB-LLY" secondAttribute="trailing" constant="20" id="B8C-Hg-8gd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dDh-ks-xiP" secondAttribute="trailing" constant="20" id="CFn-3O-qEQ"/>
-                            <constraint firstItem="X84-Ht-9gT" firstAttribute="top" secondItem="hYt-X3-pfC" secondAttribute="bottom" constant="20" id="GPS-QH-ZeB"/>
+                            <constraint firstItem="X84-Ht-9gT" firstAttribute="top" secondItem="hYt-X3-pfC" secondAttribute="bottom" constant="20" id="GPS-QH-ZeB" userLabel="Navigation Bar.top = top + 20"/>
                             <constraint firstItem="G21-DC-qha" firstAttribute="top" secondItem="1wt-k2-epf" secondAttribute="bottom" constant="10" id="Grx-CT-OPh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8O1-Ot-B1d" secondAttribute="trailing" constant="20" id="IPu-kF-D9h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2YI-Cc-BPA" secondAttribute="trailing" constant="20" id="Iew-8p-EyY"/>
@@ -214,4 +261,7 @@
             <point key="canvasLocation" x="904.79999999999995" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fJ3-GH-0R6"/>
+    </inferredMetricsTieBreakers>
 </document>

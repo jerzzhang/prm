@@ -21,9 +21,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell");
-        cell.textLabel?.text = contacts[indexPath.row].firstName! + " " + contacts[indexPath.row].lastName!;
+        cell.textLabel?.text = contacts[indexPath.row].firstName! + " " + (contacts[indexPath.row].lastName == "NULL" ? "" : contacts[indexPath.row].lastName)!;
         
         return cell;
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let myVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        myVC.contact = contacts[indexPath.row];
+        performSegue(withIdentifier: "detailSegue", sender: nil);
+        
     }
     
     override func viewDidLoad() {

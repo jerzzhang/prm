@@ -32,7 +32,7 @@ function getUser(id, cb) {
 }
 
 function getContacts(id, cb) {
-	connection.query('SELECT * FROM contacts WHERE user_id = ' + id, function(err, results, fields) {
+	connection.query('SELECT * FROM contacts WHERE user_id = ' + id + ' ORDER BY last_name, first_name', function(err, results, fields) {
 		cb(err, results);
 	});
 }
