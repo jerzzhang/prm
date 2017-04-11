@@ -30,6 +30,8 @@ class Contact: Mappable {
         email <- map["email"];
         birthday <- map["birthday"];
         location <- map["location"];
+        company <- map["company"];
+        position <- map["position"];
     }
 }
 

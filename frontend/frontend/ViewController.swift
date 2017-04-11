@@ -19,6 +19,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return contacts.count;
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetailSegue" {
+            if let indexPath = self.table.indexPathForSelectedRow {
+                let controller = segue.destination as! DetailTabBarController;
+                controller.contact = contacts[indexPath.row];
+            }
+        }
+    }
+    
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell");
         cell.textLabel?.text = contacts[indexPath.row].firstName! + " " + (contacts[indexPath.row].lastName == "NULL" ? "" : contacts[indexPath.row].lastName)!;
@@ -27,9 +36,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let myVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
-        myVC.contact = contacts[indexPath.row];
-        performSegue(withIdentifier: "detailSegue", sender: nil);
+        performSegue(withIdentifier: "toDetailSegue", sender: nil);
         
     }
     

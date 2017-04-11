@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1895A0D508C217A93E3F5445 /* Pods_frontend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1915C98F7A3241A8810FE068 /* Pods_frontend.framework */; };
-		F8E4508F1E9BE118003DEECF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E4508E1E9BE118003DEECF /* DetailViewController.swift */; };
+		F8E4508F1E9BE118003DEECF /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E4508E1E9BE118003DEECF /* EntriesViewController.swift */; };
+		F8E450911E9D6DFD003DEECF /* DetailTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E450901E9D6DFD003DEECF /* DetailTabBarController.swift */; };
+		F8E450931E9D7160003DEECF /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E450921E9D7160003DEECF /* DetailViewController.swift */; };
 		F8F857011E97E23E00A315A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F857001E97E23E00A315A7 /* AppDelegate.swift */; };
 		F8F857031E97E23E00A315A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F857021E97E23E00A315A7 /* ViewController.swift */; };
 		F8F857061E97E23E00A315A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8F857041E97E23E00A315A7 /* Main.storyboard */; };
@@ -22,7 +24,9 @@
 		1915C98F7A3241A8810FE068 /* Pods_frontend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_frontend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE8BAE5347C5680C5511080 /* Pods-frontend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontend.release.xcconfig"; path = "Pods/Target Support Files/Pods-frontend/Pods-frontend.release.xcconfig"; sourceTree = "<group>"; };
 		D5BB58040E290CDE59040769 /* Pods-frontend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-frontend.debug.xcconfig"; path = "Pods/Target Support Files/Pods-frontend/Pods-frontend.debug.xcconfig"; sourceTree = "<group>"; };
-		F8E4508E1E9BE118003DEECF /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F8E4508E1E9BE118003DEECF /* EntriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntriesViewController.swift; sourceTree = "<group>"; };
+		F8E450901E9D6DFD003DEECF /* DetailTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTabBarController.swift; sourceTree = "<group>"; };
+		F8E450921E9D7160003DEECF /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F8F856FD1E97E23E00A315A7 /* frontend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = frontend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8F857001E97E23E00A315A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8F857021E97E23E00A315A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +96,9 @@
 				F8F8570C1E97E23E00A315A7 /* Info.plist */,
 				F8F857121E97FAC600A315A7 /* Contact.swift */,
 				F8F857141E9990A700A315A7 /* AddContactsViewController.swift */,
-				F8E4508E1E9BE118003DEECF /* DetailViewController.swift */,
+				F8E4508E1E9BE118003DEECF /* EntriesViewController.swift */,
+				F8E450901E9D6DFD003DEECF /* DetailTabBarController.swift */,
+				F8E450921E9D7160003DEECF /* DetailViewController.swift */,
 			);
 			path = frontend;
 			sourceTree = "<group>";
@@ -222,9 +228,11 @@
 			files = (
 				F8F857031E97E23E00A315A7 /* ViewController.swift in Sources */,
 				F8F857151E9990A700A315A7 /* AddContactsViewController.swift in Sources */,
-				F8E4508F1E9BE118003DEECF /* DetailViewController.swift in Sources */,
+				F8E4508F1E9BE118003DEECF /* EntriesViewController.swift in Sources */,
 				F8F857131E97FAC600A315A7 /* Contact.swift in Sources */,
+				F8E450911E9D6DFD003DEECF /* DetailTabBarController.swift in Sources */,
 				F8F857011E97E23E00A315A7 /* AppDelegate.swift in Sources */,
+				F8E450931E9D7160003DEECF /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
