@@ -45,7 +45,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sbU-2Q-GTO" id="FFf-OB-DAE">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -64,8 +64,8 @@
                             <constraint firstAttribute="trailing" secondItem="yfs-nT-Ox3" secondAttribute="trailing" id="0ky-Hg-2ge"/>
                             <constraint firstItem="yfs-nT-Ox3" firstAttribute="top" secondItem="yU9-fU-bRA" secondAttribute="bottom" id="8B3-tV-Rvn"/>
                             <constraint firstItem="yfs-nT-Ox3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FW9-Db-Fam"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yfs-nT-Ox3" secondAttribute="bottom" id="G8N-mx-Gb0"/>
                             <constraint firstItem="yU9-fU-bRA" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="Mee-RH-oQJ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yfs-nT-Ox3" secondAttribute="bottom" id="Saw-2T-v3x"/>
                             <constraint firstItem="yU9-fU-bRA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gal-y5-dfD"/>
                             <constraint firstAttribute="trailing" secondItem="yU9-fU-bRA" secondAttribute="trailing" id="iVo-8n-BHS"/>
                         </constraints>
@@ -123,12 +123,30 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GtH-4i-mc2">
+                                <rect key="frame" x="166" y="564" width="43" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" title="+"/>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g6b-f6-Eak">
+                                <rect key="frame" x="0.0" y="64" width="375" height="500"/>
+                                <connections>
+                                    <segue destination="dec-fw-n8k" kind="embed" identifier="timelineSegue" id="qhR-RV-emR"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="N5j-7x-ilV" firstAttribute="top" secondItem="VAh-u4-YEm" secondAttribute="top" constant="20" id="6XJ-vu-Xm5" userLabel="Nav Bar.top = top"/>
                             <constraint firstAttribute="trailing" secondItem="N5j-7x-ilV" secondAttribute="trailing" id="8s2-d0-FKD"/>
+                            <constraint firstItem="g6b-f6-Eak" firstAttribute="top" secondItem="N5j-7x-ilV" secondAttribute="bottom" id="ECW-4I-0tq"/>
+                            <constraint firstItem="GtH-4i-mc2" firstAttribute="leading" secondItem="VAh-u4-YEm" secondAttribute="leadingMargin" constant="150" id="Gct-pz-ibr"/>
+                            <constraint firstItem="GtH-4i-mc2" firstAttribute="top" secondItem="g6b-f6-Eak" secondAttribute="bottom" id="I7j-Zy-ncm"/>
                             <constraint firstItem="N5j-7x-ilV" firstAttribute="leading" secondItem="VAh-u4-YEm" secondAttribute="leading" id="Xie-hC-nyJ"/>
+                            <constraint firstItem="g6b-f6-Eak" firstAttribute="leading" secondItem="VAh-u4-YEm" secondAttribute="leading" id="b5w-xl-htU"/>
+                            <constraint firstItem="IvX-Fo-uiY" firstAttribute="top" secondItem="GtH-4i-mc2" secondAttribute="bottom" id="bcN-vG-YUx" userLabel="Bottom Layout Guide.top = +.top"/>
+                            <constraint firstAttribute="trailing" secondItem="g6b-f6-Eak" secondAttribute="trailing" id="gH8-hs-l4W"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GtH-4i-mc2" secondAttribute="trailing" constant="150" id="xRL-lS-N8E"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Entries" id="nnB-R5-jhQ"/>
@@ -138,7 +156,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DmT-zp-Dm7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="786" y="896"/>
+            <point key="canvasLocation" x="784.79999999999995" y="895.50224887556226"/>
+        </scene>
+        <!--Timeline Table View Controller-->
+        <scene sceneID="oaj-HX-OdE">
+            <objects>
+                <tableViewController id="dec-fw-n8k" customClass="TimelineTableViewController" customModule="frontend" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9p2-Wb-c6f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TimelineTableViewCell" selectionStyle="default" indentationWidth="10" id="AcG-me-btP" customClass="TimelineTableViewCell" customModule="TimelineTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AcG-me-btP" id="aEm-Jx-m85">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dec-fw-n8k" id="IXt-dJ-6ZF"/>
+                            <outlet property="delegate" destination="dec-fw-n8k" id="XUH-tM-mcN"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0XW-TX-4tI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1559" y="901"/>
         </scene>
         <!--Details-->
         <scene sceneID="WeL-5A-K81">
@@ -387,8 +433,25 @@
             </objects>
             <point key="canvasLocation" x="904.79999999999995" y="138.98050974512745"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="hvQ-2a-gs4">
+            <objects>
+                <viewController id="Vwg-BH-3E1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WUH-8L-xIg"/>
+                        <viewControllerLayoutGuide type="bottom" id="pdS-XX-w4b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T3W-vE-IEk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5MY-oe-Mvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fES-c5-bU1"/>
+        <segue reference="fJ3-GH-0R6"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -51,6 +51,12 @@ function postContact(id, firstName, lastName, phoneNumber, email, location, comp
 	});
 }
 
+function getEntries(contact_id, cb) {
+	connection.query('SELECT * FROM entries WHERE contact_id = ' + contact_id + ' ORDER BY timestamp DESC', function(err, results, fields) {
+		cb(err, results);
+	});
+}
+
 function connectionErrorHandler(err) {
 	if(err) {
 	    console.log(err);    
@@ -60,5 +66,6 @@ function connectionErrorHandler(err) {
 module.exports = {
 	getUser: getUser,
 	getContacts: getContacts,
-	postContact: postContact
+	postContact: postContact,
+	getEntries: getEntries
 }

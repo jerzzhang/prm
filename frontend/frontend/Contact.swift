@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 class Contact: Mappable {
+    var id: Int?;
     var firstName: String?;
     var lastName: String?;
     var phoneNumber: String?;
@@ -24,6 +25,7 @@ class Contact: Mappable {
     }
     
     func mapping(map: Map) {
+        id <- map["id"];
         firstName <- map["first_name"];
         lastName <- map["last_name"];
         phoneNumber <- map["phone_number"];

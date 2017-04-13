@@ -9,14 +9,15 @@ router.get('/:user_id', function(req, res) {
 });
 
 router.get('/:user_id/contacts', function(req, res) {
-	console.log('/:user_id/contacts');
 	dbModel.getContacts(req.params.user_id, function(err, result) {
 		res.end(JSON.stringify(result));
 	});
 })
 
 router.get('/:user_id/contacts/:contact_id/entries', function(req, res) {
-	res.end(req.params);
+	dbModel.getEntries(req.params.contact_id, function(err, result) {
+		res.end(JSON.stringify(result));
+	});
 });
 
 router.get('/:user_id/contacts/:contact_id/entries/:entry_id', function(req, res) {

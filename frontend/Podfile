@@ -9,4 +9,5 @@ target 'frontend' do
   	pod 'Alamofire', '~> 4.4'
   	pod 'ObjectMapper', '~> 2.0'
   	pod 'AlamofireObjectMapper', '~> 4.0'
+  	pod "TimelineTableViewCell"
 end
